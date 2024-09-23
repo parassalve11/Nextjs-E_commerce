@@ -4,7 +4,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import UserAvatar from "./UserAvatar";
 import Link from "next/link";
 import { LogOutIcon, User2Icon } from "lucide-react";
-import LogOut from "@/app/(auth)/actions";
+import {LogOut} from "@/app/(auth)/actions";
 import { cn } from "@/lib/utils";
 
 
@@ -19,7 +19,7 @@ export default function UserButton({className}:UserButtonProps){
         <DropdownMenu >
             <DropdownMenuTrigger asChild>
                 <button className={cn('rounded-full flex-none',className)}>
-                    <UserAvatar avatarUrl={user.avatarUrl} size={40}  />
+                    <UserAvatar avatarUrl={user.avatarUrl} size={30}  />
                 </button>
             </DropdownMenuTrigger>
          <DropdownMenuContent>

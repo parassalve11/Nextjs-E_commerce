@@ -19,3 +19,16 @@ export const LoginSchema = z.object({
 })
 
 export type Loginvalues = z.infer<typeof LoginSchema>
+
+
+export const createStreamSchema = z.object({
+    creatorId:requiredString,
+    url:requiredString
+})
+
+export type createStreamType = z.infer<typeof createStreamSchema>;
+
+export const UpvoteSchema = z.object({
+    streamId:requiredString
+});
+export type Upvotevalues = z.infer<typeof UpvoteSchema>;

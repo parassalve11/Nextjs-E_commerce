@@ -21,7 +21,7 @@ const FloatingInput = React.forwardRef<HTMLInputElement, InputProps>(
      <p className="pointer-events-none absolute top-1/2 transform -translate-y-1/2 left-[350px] ">
      <span className=''> {endContent}</span>
       </p>
-    <Input placeholder=" " className={cn(`peer ${startContent && 'pl-9'}`, className)} ref={ref} {...props} />
+    <Input placeholder="" className={cn(`peer ${startContent && 'pl-8'}`, className)} ref={ref} {...props} />
     
    </>
     )
@@ -36,7 +36,7 @@ const FloatingLabel = React.forwardRef<
   return (
     <Label
       className={cn(
-        ' peer-focus:secondary peer-focus:dark:secondary absolute start-4 top-1 text-slate-600 z-10 origin-[0] -translate-y-4 scale-90 transform bg-background  text-sm  duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-1 peer-focus:px-1 px-2   peer-focus:-translate-y-4 peer-focus:scale-90  dark:bg-background rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/2',
+        ' peer-focus:secondary peer-focus:dark:secondary absolute start-2 top-1 text-slate-600 z-10 origin-[0] -translate-y-4 scale-90 transform bg-background  text-sm  duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-1 peer-focus:px-1 px-2   peer-focus:-translate-y-4 peer-focus:scale-90  dark:bg-background rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/2',
         className,
       )}
       ref={ref}

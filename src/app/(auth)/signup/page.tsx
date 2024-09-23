@@ -6,7 +6,7 @@ import SignUpFrom from "./SignUpFrom";
 export default async function page(){
     return(
         <div className="h-screen flex items-center justify-center p-5">
-            <div className="flex h-full max-h-[40rem] w-full max-w-[64rem] overflow-hidden rounded-2xl shadow-2xl">
+            <div className="flex h-full max-h-[40rem] w-full max-w-[64rem] overflow-hidden bg-card rounded-2xl shadow-2xl">
                 <div className="w-full overflow-y-auto p-10 space-y-10 md:w-1/2">
                     <div className="space-y-1 text-center">
                         <h1 className="text-3xl font-bold">Sign up with Lucia Auth</h1>

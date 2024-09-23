@@ -9,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { signUp } from "./actions";
+import { Mails, User } from "lucide-react";
 
 
 
@@ -46,7 +47,7 @@ export default function SignUpFrom(){
         render={({field}) =>(
           <FormItem>
             <FormControl>
-             <FloatingLabelInput label="Username" {...field} />
+             <FloatingLabelInput label="Username" startContent={<User className="size-4" />} {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -59,7 +60,7 @@ export default function SignUpFrom(){
         render={({field}) =>(
           <FormItem>
             <FormControl>
-              <FloatingLabelInput label="Email" {...field}/>
+              <FloatingLabelInput  label="Email" startContent={<Mails className="size-4" />} {...field}/>
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -78,7 +79,7 @@ export default function SignUpFrom(){
           </FormItem>
         )}
         />
-        <LoadingButton loading={pending} className="w-full" >Create account</LoadingButton>
+        <LoadingButton className="w-full" >Create account</LoadingButton>
       
       </form>
      

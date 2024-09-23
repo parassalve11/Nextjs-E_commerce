@@ -6,10 +6,12 @@ export default async function Layout({children}:{children:React.ReactNode}){
     const{user} = await validRequest()
 
     if(user){
-        return redirect('login')
+        return redirect('signup')
     }
 
     return(
-        <>{children}</>
+       <div>
+        {children}
+       </div>
     )
 }

@@ -1,25 +1,29 @@
+'use client'
 import { cn } from "@/lib/utils";
-import { Loader2 } from "lucide-react";
 import { Button, ButtonProps } from "./ui/button";
+import { Loader2 } from "lucide-react";
+import { useFormStatus } from "react-dom";
 
-interface LoadingButtonProps extends ButtonProps {
-  loading: boolean;
-}
+
+// interface LoadingButtonProps extends ButtonProps{
+//   loading?:boolean
+// };
 
 export default function LoadingButton({
-  loading,
   disabled,
   className,
   ...props
-}: LoadingButtonProps) {
+}:ButtonProps){
+
+  const{pending} = useFormStatus();
   return (
     <Button
-      disabled={loading || disabled}
-      className={cn("flex items-center gap-2", className)}
-      {...props}
+    disabled={pending || disabled}
+    className={cn('flex justify-center gap-2',className)}
+    {...props}
     >
-      {loading && <Loader2 className="size-5 animate-spin" />}
+      { pending && <Loader2 className="size-5 animate-spin" />}
       {props.children}
     </Button>
-  );
+  )
 }

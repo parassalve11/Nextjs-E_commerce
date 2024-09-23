@@ -59,10 +59,10 @@ export default  function LoginForm(){
                         </FormItem>
                     )}
                     />
-                    <LoadingButton loading={pending} type="submit" className="w-full">Login</LoadingButton>
+                    <LoadingButton  type="submit" className="w-full">Login</LoadingButton>
                 </form>
             </Form>
-            {error && <p className="text-destructive font-semibold">{error}</p>}
+            {error && pending &&  <p className="text-destructive font-semibold">{error}</p>}
         </main>
     )
   
