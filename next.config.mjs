@@ -8,6 +8,7 @@ const nextConfig = {
         { hostname: "unsplash.com" },
         { hostname: "lh3.googleusercontent.com" },
         { hostname: "plus.unsplash.com" },
+        { hostname :"images.pexels.com"},
       ],
     },
     experimental: {

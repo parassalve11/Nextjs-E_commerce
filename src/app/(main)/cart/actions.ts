@@ -8,28 +8,62 @@ export async function setQuantity(productId: string, quantity: number) {
 
   const articalInCart = cart.items.find((item) => item.productId === productId);
 
-  if(quantity === 0){
-    if(articalInCart){
-        await db.cartItem.delete({
-            where:{id:articalInCart.id}
-        });
+  if (quantity === 0) {
+    if (articalInCart) {
+      await db.cart.update({
+        where: { id: cart.id },
+        data: {
+          items: {
+            delete: { id: articalInCart.id },
+          },
+        },
+      });
+
+      // await db.cartItem.delete({
+      //     where:{id:articalInCart.id}
+      // });
     }
-  }else{
-    if(articalInCart){
-        await db.cartItem.update({
-            where:{id:articalInCart.id},
-            data:{
+  } else {
+    if (articalInCart) {
+      await db.cart.update({
+        where: { id: cart.id },
+        data: {
+          items: {
+            update: {
+              where: { id: articalInCart.id},
+              data: {
+                quantity,
+              },
+            },
+          },
+        },
+      });
+      // await db.cartItem.update({
+      //     where:{id:articalInCart.id},
+      //     data:{
+      //         quantity
+      //     }
+      // })
+    } else {
+      await db.cart.update({
+        where: { id: cart.id },
+        data: {
+          items: {
+            create:{
+                productId,
                 quantity
             }
-        })
-    }else{
-        await db.cartItem.create({
-            data:{
-                cartId:cart.id,
-                productId,
-                quantity:1
-            }
-        })
+          },
+        },
+      });
+
+      // await db.cartItem.create({
+      //     data:{
+      //         cartId:cart.id,
+      //         productId,
+      //         quantity:1
+      //     }
+      // })
     }
   }
 }

@@ -14,15 +14,17 @@ export async function addProducts(formData: FormData) {
   }
 
  
-    await db.product.create({
-      data: {
-        name,
-        description,
-        imageUrl,
-        price,
-      },
-    });
+ 
+  await db.product.create({
+    data: {
+      name,
+      description,
+      imageUrl,
+      price,
+    },
+  });
+ 
   
 
-  redirect("/");
+  redirect("/add-products");
 }
