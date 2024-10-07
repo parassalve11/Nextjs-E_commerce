@@ -1,12 +1,13 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { Loader2, ShoppingCartIcon } from "lucide-react"
+import { ProductsWithCartItems } from "@/lib/cart"
+import { Check, Loader2,  ShoppingCartIcon } from "lucide-react"
 import { useState, useTransition } from "react"
 
 
 interface AddTOCartButton{
-    productId:string
+    productId:string,
     incrementProductQuantity: (productId:string) => Promise<void> 
 }
 
@@ -23,9 +24,10 @@ return(
         })
     }} 
     className="font-bold flex items-center gap-2"  variant={"outline"}>
-          {pending ? <Loader2 className="size-5 animate-spin m-auto" /> :  <ShoppingCartIcon className="size-5" /> } Add to Cart
+          {pending ? <Loader2 className="size-5 animate-spin m-auto" /> : <ShoppingCartIcon  className="size-5"/>}   Add to Cart
     </Button>
     { success && <p className="text-green-500">Added to cart.</p>}
+   
    </div>
 )
 }

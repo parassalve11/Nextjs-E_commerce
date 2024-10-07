@@ -75,3 +75,9 @@ model CartItem {
 
   @@map("cartitems")
 }
+
+model Bid{
+  id String @id @default(cuid()) @map("_id")
+  auctionAmmount BigInt
+  
+}

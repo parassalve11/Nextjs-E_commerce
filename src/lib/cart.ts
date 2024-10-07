@@ -9,6 +9,10 @@ export type CartWithProducts = Prisma.CartGetPayload<{
 
 export type CartItemwithProducts = Prisma.CartItemGetPayload<{
   include:{product:true}
+}>;
+
+export type ProductsWithCartItems = Prisma.ProductGetPayload<{
+  include:{CartItem:{select:{quantity:any}}}
 }>
 
 export type ShoppingCart = CartWithProducts & {

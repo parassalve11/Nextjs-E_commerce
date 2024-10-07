@@ -4,7 +4,6 @@ import {  ShoppingCartIcon } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import Link from "next/link";
 import db from "@/lib/db";
-import ItemsCard from "./ItemsCard";
 import { formatPrice } from "@/lib/format";
 import { Button } from "./ui/button";
 
